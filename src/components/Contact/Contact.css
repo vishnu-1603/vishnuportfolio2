@@ -1,0 +1,164 @@
+.contact {
+    position: absolute;
+    top: 10%;
+    left: 28%;
+  padding: 60px 5%;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Title */
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #43d0f6;
+  animation: fadeDown 1s ease-in-out;
+}
+
+/* Subtitle */
+.contact-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #aaa;
+  animation: fadeUp 1s ease-in-out;
+}
+
+/* Form */
+.contact-form {
+    width: 800px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background: #1e1e2f;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #43d0f6;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Button */
+.contact-btn {
+  background: #43d0f6;
+  color: #0e1525;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+.contact-btn:hover {
+  background: #ffffff;
+  color:#1e1e2f;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 📱 Mobile View */
+@media (max-width: 786px) {
+
+
+  .contact {
+    background-color: #0e1525;
+    height: 500%;
+    width: 60%;
+    position: absolute; /* avoid absolute overlapping */
+    left: -5%;
+    top: 100%;
+    padding: 62px 5%;
+    
+  }
+  
+
+  .contact-title {
+    position: absolute; 
+    left: 28%;
+    top: -1%;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .contact-subtitle {
+    
+    text-align: center;
+    font-size: 1.0rem;
+  }
+
+  .contact-form {
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 80%;
+    height: 100%; /* full width for small screens */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    width: 75%; /* make inputs fill the form width */
+  }
+
+  .contact-btn {
+   
+    font-size: 1rem;
+    padding: 12px;
+    width: 80%; /* button full width */
+  }
+}

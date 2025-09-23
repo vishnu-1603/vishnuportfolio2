@@ -1,0 +1,154 @@
+.skills {
+  background-color: #0e1525;
+  width: 50%;
+  height: 100%;
+  color: #cfd3dc;
+  padding: 80px 10%;
+  text-align: center;
+  position: absolute;
+  top: -1%;
+  right: 13%;
+    animation: fadeDown 1s ease-in-out;
+
+}
+
+.skills-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: -2px;
+  color: #fff;
+}
+
+.skills-container h2 span {
+  color: #43d0f6;
+}
+
+.skills-container p {
+  font-size: 1.1rem;
+  color: #cfd3dc;
+  margin-bottom: 20px;
+}
+
+/* Two-column layout */
+.skills-columns {
+  right: 30%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.skill-card {
+  width: 300px;
+  position: relative;
+  background: #1a2238;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 15px rgba(67, 208, 246, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(67, 208, 246, 0.4);
+}
+
+
+.progress-bar {
+  
+  background: #0e1525;
+  border-radius: 50px;
+  height: 30px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #43d0f6, #1abc9c);
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  animation: fillBar 2s ease forwards;
+}
+
+
+
+/* Animate bar width */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress);
+  }
+}
+
+
+/* Responsive */
+/* 📱 Mobile view (phones & small screens) */
+@media (max-width: 786px) {
+
+  .skills {
+    background-color: #0e1525;
+    width: 100%;
+    height:800%;
+    padding: 30px 20px;
+    position: absolute;
+    left:-21%;
+    text-align: center;
+  }
+
+
+  .skills-container {
+    position: absolute;
+    top: 12%;
+    left: 23%;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .skills-container h2 {
+    font-size: 2rem;
+    color: #43d0f6;
+    margin-bottom: 20px;
+  }
+
+  .skills-columns {
+    position: absolute;
+    top: 105%;
+    left: 10%;
+    display: flex;
+    flex-direction: row; /* 🔥 one column */
+    gap: 50px;
+    width: 20%;
+  }
+
+  .skill-card {
+    width: 100%;
+    padding: 10px 15px;
+    background: #0e1525;   /* dark small boxes inside */
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .skill-card p {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #cfd3dc;
+  }
+
+  .progress-bar {
+    height: 18px;
+    border-radius: px;
+    background: #2e3a55;
+    overflow: hidden;
+  }
+
+  .progress-bar span {
+    display: block;
+    height: 100%;
+    background: #43d0f6; 
+    color: #000000; 
+    font-size: 0.9rem;
+  text-align: center;/* skill fill color */
+  }
+}
