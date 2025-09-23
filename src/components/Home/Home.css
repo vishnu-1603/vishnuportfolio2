@@ -169,74 +169,94 @@
 }
 /* Responsive */
 
-@media (max-width: 786px) {
+/* Tablet & Mobile */
+@media (max-width: 768px) {
   .home {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* stack items */
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 80px 20px; /* 🔥 natural spacing */
-    margin: 0;
+    padding: 40px 20px;
+    margin: 0 auto;
     overflow-x: hidden;
-    overflow-y: hidden;
     background-color: #0e1525;
-    width: 1500%;
-    height: 800%;
+    width: 10000%;
+    height: 50%;
   }
 
-  .home-content {background-color: #0e1525;
+  .home-content {
     position: absolute;
-    top: 300%;
-    background-color: #0e1525;
-    width: 50%;
-    left: -20%;
+    top: 350%;
+    left: -6%;
+    width: 40%;
     order: 1;
+    margin-bottom: 20px;
   }
 
   .home-content h1 {
-    font-size: 2.1rem;       /* 🔥 readable size */
+    font-size: 2rem;
     margin-bottom: 10px;
-    position: absolute;    /* no absolute */
-    top: -5%;
-    left:18%
+    position: relative; /* ❌ removed absolute */
+    top: auto;
+    left: 11%;
   }
 
   .home-content h2 {
-    position: absolute;
-    top: 12%;
-    left: 18%;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 10px 0;
+    position: relative;
+    top: auto;
+    left: auto;
   }
 
   .home-content p {
-  font-size: 1.2rem;
-  margin: 110px;
-  width: 60%;
-  text-align: center;
-  line-height: 1.5rem;    /* readable spacing */
-}
+    font-size: 1rem;
+    margin: 15px auto;
+    width: 90%;
+    line-height: 1.5rem;
+    text-align: center;
+  }
 
   .home-buttons {
-    position: absolute;
-    left: 25%;
-    top: 75%;
+    margin-top: 20px;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
+    justify-content: center;
+    gap: 15px;
   }
 
   .home-image {
-    position: absolute;
-    top: 100%;
-    left: 12%;
-    margin: 20px auto 0 auto; /* 🔥 center image */
+   
+    width: 200px;
+    margin-top: 100px;
+    text-align: center;
   }
 
   .home-image img {
-    width: 200px;
-    height: 150px;
-    border-radius: 20%;     /* circular profile */
-    object-fit: cover;
+    position: relative;
+    left: -210%;
+   
+    border-radius: 10%; /* circular profile */
+  }
+}
+
+/* Very Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .home-content h2 {
+    font-size: 1rem;
+  }
+
+  .home-content p {
+    font-size: 0.9rem;
+    width: 95%;
+  }
+
+  .home-image img {
+    width: 120px;
+    height: 120px;
   }
 }
