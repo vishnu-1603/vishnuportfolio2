@@ -1,6 +1,6 @@
 .certificates {
     position: absolute;
-    top: 2%;
+    top: -5%;
     left: 10%;
   background-color: #0e1525;
   width: 80%;
@@ -65,7 +65,7 @@
 }
 
 .certificate-info h3 {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: #43d0f6;
   margin-bottom: 10px;
 }
