@@ -177,14 +177,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 4000px 20px;
     margin: 0 auto;
     overflow-x: hidden;
     background-color: #0e1525;
     width: 10000%;
     height: 50%;
   }
-
   .home-content {
     position: absolute;
     top: 350%;
@@ -226,17 +225,19 @@
   }
 
   .home-image {
+       position: absolute;
+       top: 150%;left: 15%;
+
    
-    width: 200px;
-    margin-top: 100px;
+  
     text-align: center;
   }
 
   .home-image img {
-    position: relative;
-    left: -210%;
-   
-    border-radius: 10%; /* circular profile */
+        width: 200px;
+    height: 500px;
+    
+    border-radius: 25%; /* circular profile */
   }
 }
 
