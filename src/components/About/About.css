@@ -16,9 +16,9 @@
 /* Left: Image */
 .about-image img {
    position: absolute;
-  right: 60%;
-  top: 22%;
-  width: 400px;
+  right: 55%;
+  top: 28%;
+  width: 450px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(67, 208, 246, 0.4);
   transition: transform 0.3s ease-in-out;
@@ -32,10 +32,10 @@
 /* Right: Content */
 .about-content {
   position: absolute;
-  right: 10%;
-  top: 16%;
+  right: 15%;
+  top: 23%;
   white-space: normal;
-  max-width: 700px;
+  max-width: 600px;
   flex: 1;
    animation: fadeDown 1s ease-in-out;
 }
