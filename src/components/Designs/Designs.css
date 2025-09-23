@@ -5,7 +5,7 @@
   text-align: center;
   position: absolute;
   top: 8%;
-  left: 18%;
+  left: 12%;
   max-width: max-content;
 }
 
@@ -25,7 +25,7 @@
 
 /* Outer Scroll Container */
 .designs-outer {
-  max-width: 100px;
+  max-width: 1000px;
   margin: auto;
   overflow-x: auto;
   display: flex;
@@ -66,10 +66,10 @@
 }
 
 .design-card img {
-  width: 80%;
-  height: 250px;
+  width: 60%;
+  height: 200px;
   object-fit: cover;
-  border-radius: 12x;
+  border-radius: 12px;
   margin-bottom: -25px;
   animation: fadeIn 1.2s ease-in-out;
 }
@@ -89,8 +89,8 @@
 .scroll-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
+  gap: 30px;
+  margin-top: 1px;
 }
 
 .scroll-btn {

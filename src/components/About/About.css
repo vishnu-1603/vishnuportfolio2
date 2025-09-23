@@ -17,7 +17,7 @@
 .about-image img {
    position: absolute;
   right: 60%;
-  top: 20%;
+  top: 22%;
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(67, 208, 246, 0.4);
@@ -33,7 +33,7 @@
 .about-content {
   position: absolute;
   right: 12%;
-  top: 14%;
+  top: 16%;
   white-space: normal;
   max-width: 700px;
   flex: 1;
