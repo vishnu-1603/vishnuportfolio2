@@ -230,12 +230,11 @@
 
    
   
-    text-align: center;
   }
 
   .home-image img {
-        width: 200px;
-    height: 500px;
+        width: 100px;
+    height: 50px;
     
     border-radius: 25%; /* circular profile */
   }
