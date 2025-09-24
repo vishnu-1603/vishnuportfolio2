@@ -118,9 +118,9 @@
   .contact {
     background-color: #0e1525;
     height: 500%;
-    width: 60%;
+    width: 100%;
     position: absolute; /* avoid absolute overlapping */
-    left: -5%;
+    left: -32%;
     top: 100%;
     padding: 62px 5%;
     
@@ -129,7 +129,7 @@
 
   .contact-title {
     position: absolute; 
-    left: 28%;
+    left: 43%;
     top: -1%;
     text-align: center;
     font-size: 1.8rem;
@@ -143,22 +143,22 @@
 
   .contact-form {
     position: absolute;
-    top: 25%;
-    left: 15%;
-    width: 80%;
+    top: 19%;
+    left: 37%;
+    width: 35%;
     height: 100%; /* full width for small screens */
   }
 
   .contact-form input,
   .contact-form textarea {
     font-size: 0.95rem;
-    width: 75%; /* make inputs fill the form width */
+    width: 67%; /* make inputs fill the form width */
   }
 
   .contact-btn {
    
     font-size: 1rem;
     padding: 12px;
-    width: 80%; /* button full width */
+    width: 75%; /* button full width */
   }
 }
