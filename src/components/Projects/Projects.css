@@ -1,187 +1,217 @@
 .projects {
-  background-color: #0e1525;
-  color: #cfd3dc;
-  padding: 80px 10%;
-  text-align: center;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.projects::before {
+  content: '';
   position: absolute;
-  bottom:7%;
-  right:-2%;
-  overflow-x: hidden;
-     animation: fadeDown 1s ease-in-out;
-
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
-.projects-container h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1px;
-  color: #fff;
-  
-}
-
-.projects-container h2 span {
-  color: #43d0f6;
-}
-
-.projects-container p {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #cfd3dc;
-  white-space: wrap;
-}
-
-/* 🔄 Updated for horizontal layout */
-.projects-grid {
+.projects-carousel {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   gap: 30px;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 10px;
-  overflow-x: hidden;
 }
 
+.carousel-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+}
 
 .project-card {
-  width: 3000%;
-  height: 30%;
-  background: #1a2238;
-  border-radius: 12px;
+  width: 33.333%;
+  flex-shrink: 0;
+  background: rgba(26, 26, 46, 0.8);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(67, 208, 246, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-   /* Important: for consistent layout */
-
+  margin: 20px;
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  transition: all 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(67, 208, 246, 0.4);
+  transform: translateY(-5px);
+  border-color: rgba(0, 212, 170, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 212, 170, 0.2);
 }
 
-.project-card img {
+.project-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.project-image img {
   width: 100%;
-  height: 165px;
+  height: 100%;
   object-fit: cover;
-       animation: fadeDown 1s ease-in-out;
-
+  transition: transform 0.3s ease;
 }
 
-.project-info {
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
   padding: 20px;
-  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
 
-.project-info h3 {
-  white-space: wrap;
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  background: rgba(0, 212, 170, 0.2);
+  color: #00d4aa;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 212, 170, 0.3);
+}
+
+.project-content {
+  padding: 30px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.project-description {
+  color: #b8c2cc;
   font-size: 1rem;
-  color: #43d0f6;
+  line-height: 1.6;
   margin-bottom: 10px;
 }
 
-.project-info p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: #cfd3dc;
+.project-details {
+  color: #8892a0;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #43d0f6;
-  color: #000;
-  border-radius: 25px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+.carousel-btn {
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(0, 212, 170, 0.5);
+  background: rgba(0, 212, 170, 0.1);
+  color: #00d4aa;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-.btn:hover {
-  background: #fff;
-  color: #0e1525;
-}
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.carousel-btn:hover {
+  background: #00d4aa;
+  color: #1a1a2e;
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(0, 212, 170, 0.4);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.indicator {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-
-/* Responsive */
-@media (max-width: 786px) {
-  .projects {
-    background-color:#0e1525;
-    width: 100%;
-    height: 580%;
-    position: absolute;
-    top: 80%;
-    left: -10%;
-    padding: 10px px;
-  }
-  .projects-container h2 {
-    position: absolute;
-    top: 3%;
-    left: 19%;
-    font-size: 2rem;
-  }
-.projects-container{
-  font-size: 1rem;
-  width: 35%;
-  margin: 40px;
-  padding: -12px;
+.indicator.active {
+  background: #00d4aa;
+  transform: scale(1.2);
 }
-  .projects-info p {
-    font-size: 1rem;
-  }
 
-  /* Mobile → horizontal scroll */
- 
-  .projects-grid {
-    position: absolute;
-    top: 30%;
-    left: 17%;
-    width: 20%;
-    height:250%;
-    display: flex;
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-arrow {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #00d4aa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00d4aa;
+  font-size: 1.2rem;
+  animation: bounce 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .projects-carousel {
     flex-direction: column;
-    overflow-x: auto;
     gap: 20px;
-  
   }
-
-  .project-card {
-    position: relative;
-    left: 10%;
-
-    width:80%;
-     height:27%; 
+  
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .project-content {
+    padding: 20px;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
   }
 }

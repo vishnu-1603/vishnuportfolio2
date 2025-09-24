@@ -1,59 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Certificates.css';
-import cert1 from '../../assets/Certificates 1.jpg';
-import cert2 from '../../assets/Certificate 2.jpg';
-import cert3 from '../../assets/Certificate 3.jpg';
 
 const Certificates = () => {
- const certificateData = [
-  {
-    id: 1,
-    title: 'Full Stack Web Development',
-    image: cert1,
-    description: 'Completed a Full Stack Web Development.',
-    pdf: './../../../public/1000115331.pdf' 
-  },
-  {
-    id: 2,
-    title: 'UI/UX Masterclass',
-    image: cert2,
-    description: 'Hands-on advanced UI/UX training with projects.',
-    pdf: './../../../public/certificate1.pdf'
-  },
-  {
-    id: 3,
-    title: 'Frontend Developer',
-    image: cert3,
-    description: 'Certified in modern UI/UX principles and design tools.',
-    pdf: './../../../public/certificate2.pdf'
-  }
-];
-
+  const [activeCategory, setActiveCategory] = useState('prizes');
+  
+  const certificates = {
+    prizes: [
+      {
+        id: 1,
+        title: 'Certificate of Completion',
+        subtitle: 'Full Stack Developer Bootcamp',
+        organization: 'NexTech R&D Private Limited',
+        date: 'August 10th 2023',
+        description: 'Won Prizes in Internship, Presentations & Front page design.',
+        image: '/api/placeholder/400/300'
+      }
+    ],
+    designs: [
+      {
+        id: 2,
+        title: 'UI/UX Design Excellence',
+        subtitle: 'Advanced Design Portfolio',
+        organization: 'Design Institute',
+        date: 'March 2023',
+        description: 'Explore My Designs - Modern interface designs and user experience projects.',
+        image: '/api/placeholder/400/300'
+      }
+    ]
+  };
 
   return (
-    <section className="certificates">
-      <div className="certificates-container">
-        <h2><span>My</span> Certificates</h2>
-        <p>Here are some of the certifications I’ve earned along my journey.</p>
-
-        <div className="certificates-grid">
-          {certificateData.map(cert => (
-            <div key={cert.id} className="certificate-card">
-              <img src={cert.image} alt={cert.title} />
-              <div className="certificate-info">
-                <h3>{cert.title}</h3>
-                <p>{cert.description}</p>
+    <section id="certificates" className="certificates">
+      <div className="container">
+        <h2 className="section-title">
+          My <span className="highlight">Certificates & Designs</span>
+        </h2>
+        
+        <div className="certificates-content">
+          <div className="category-tabs">
+            <button 
+              className={`tab-button ${activeCategory === 'prizes' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('prizes')}
+            >
+              Won Prizes in Internship, Presentations & Front page design.
+            </button>
+            <button 
+              className={`tab-button ${activeCategory === 'designs' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('designs')}
+            >
+              Explore My Designs
+            </button>
+          </div>
+          
+          <div className="certificates-grid">
+            {certificates[activeCategory].map((cert) => (
+              <div key={cert.id} className="certificate-card">
+                <div className="certificate-image">
+                  <img src={cert.image} alt={cert.title} />
+                  <div className="certificate-overlay">
+                    <button className="view-button">View Certificate</button>
+                  </div>
+                </div>
                 
-                {/* View button */}
-               <a href={cert.pdf} className="btn" download>
-  Download PDF
-</a>
-
-
-                
+                <div className="certificate-content">
+                  <h3 className="certificate-title">{cert.title}</h3>
+                  <h4 className="certificate-subtitle">{cert.subtitle}</h4>
+                  <p className="certificate-organization">{cert.organization}</p>
+                  <p className="certificate-date">{cert.date}</p>
+                  <p className="certificate-description">{cert.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          
+          <div className="navigation-arrows">
+            <button className="nav-arrow prev">←</button>
+            <button className="nav-arrow next">→</button>
+          </div>
+        </div>
+        
+        <div className="scroll-indicator">
+          <div className="scroll-arrow">↓</div>
         </div>
       </div>
     </section>

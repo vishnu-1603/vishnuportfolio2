@@ -1,56 +1,101 @@
-import React from "react";
-import "./Projects.css";
-import project1 from '../../assets/project1.png'
-import project2 from '../../assets/project2.png'
-import project3 from '../../assets/project3.jpg'
+import React, { useState } from 'react';
+import './Projects.css';
+
 const Projects = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const projects = [
+    {
+      id: 1,
+      title: 'Modern Library UI Experience - College',
+      image: '/api/placeholder/400/300',
+      description: 'Library: Designed a modern, intuitive library interface with interactive dashboards and smooth navigation using Figma.',
+      details: 'Developed a real-world inspired UI/UX project, showcasing practical design skills and user-friendly experience.',
+      tags: ['UI/UX', 'Figma', 'Interactive Design']
+    },
+    {
+      id: 2,
+      title: 'Typing Speed Test Web App',
+      image: '/api/placeholder/400/300',
+      description: 'Developed an interactive typing speed test using HTML, CSS, and JavaScript with real-time accuracy and speed tracking.',
+      details: 'Designed a modern, responsive UI with start, stop, resume, and restart controls for smooth user experience.',
+      tags: ['JavaScript', 'HTML', 'CSS', 'Interactive']
+    },
+    {
+      id: 3,
+      title: 'App UI Designs',
+      image: '/api/placeholder/400/300',
+      description: 'WhatsApp: Designed a modern, intuitive chat interface with smooth navigation and interactive elements for enhanced user experience.',
+      details: 'Instagram: Created visually appealing feed and story screens, focusing on responsive layouts and user-centered design principles.',
+      tags: ['UI Design', 'Mobile App', 'User Experience']
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
   return (
-    <section className="projects" id="projects">
-      <div className="projects-container">
-        <h2>My <span>Projects</span></h2>
-        <p>
-          A selection of my recent works showcasing web development and UI/UX design skills.
-        </p>
-
-        <div className="projects-grid">
-          {/* Project 1 */}
-          <div className="project-card">
-                      <img src={project1} alt="Projects1" className="project1"/>
-                      
-            
-            
-            <div className="project-info">
-              <h3>Portfolio Website for Design & Code</h3>
-              <p>A responsive personal portfolio built with React and CSS animations.</p>
-              <a href="https://www.figma.com/proto/hjL7TrdRSSrqXr558tgamY/PORTFOLIO?node-id=0-1&t=tNVBL31r8m7gluAd-1" className="btn" target="_blank" rel="noopener noreferrer">
-                View Project
-              </a>
+    <section id="project" className="projects">
+      <div className="container">
+        <h2 className="section-title">
+          My <span className="highlight">Projects</span>
+        </h2>
+        
+        <div className="projects-carousel">
+          <button className="carousel-btn prev" onClick={prevSlide}>
+            ←
+          </button>
+          
+          <div className="carousel-container">
+            <div 
+              className="carousel-track"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {projects.map((project) => (
+                <div key={project.id} className="project-card">
+                  <div className="project-image">
+                    <img src={project.image} alt={project.title} />
+                    <div className="project-overlay">
+                      <div className="project-tags">
+                        {project.tags.map((tag, index) => (
+                          <span key={index} className="project-tag">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="project-content">
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-description">{project.description}</p>
+                    <p className="project-details">{project.details}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Project 2 */}
-          <div className="project-card">
-            <img src={project2} alt="Project 2" className="project1"/>
-            <div className="project-info">
-              <h3>Modern Library UI Website </h3>
-              <p>Modern Library user interface designed with Figma and React.</p>
-              <a href="https://www.figma.com/proto/YSCtCz5ZAkvwOfMjjNQQLa/Library-Project?page-id=0%3A1&node-id=101-15&starting-point-node-id=1%3A5&t=9Wzj6tzt0mXbtZk0-1" className="btn" target="_blank" rel="noopener noreferrer">
-                View Project
-              </a>
-            </div>
-          </div>
-
-          {/* Project 3 */}
-          <div className="project-card">
-            <img src={project3} alt="Project 3" className="project1" />
-            <div className="project-info">
-              <h3>Typing Speed Test Web Page</h3>
-              <p>Test your typing speed and accuracy with this simple web app!</p>
-              <a href="#" className="btn" target="_blank" rel="noopener noreferrer">
-                View Project
-              </a>
-            </div>
-          </div>
+          
+          <button className="carousel-btn next" onClick={nextSlide}>
+            →
+          </button>
+        </div>
+        
+        <div className="carousel-indicators">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              className={`indicator ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
+        </div>
+        
+        <div className="scroll-indicator">
+          <div className="scroll-arrow">↓</div>
         </div>
       </div>
     </section>
