@@ -1,0 +1,240 @@
+/* Home Section */
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 55px 10%;
+  min-height: 100vh;
+  background-color: #0e1525;
+  margin: 0;
+  gap: 50px;
+  transition: all 0.3s ease-in-out;
+  flex-wrap: wrap;
+  overflow-y:hidden; 
+}
+
+/* Left Content */
+.home-content {
+  max-width: 600px;
+  flex: 1;
+  margin-left: 10%;
+  position: absolute;
+  left: 3%;
+  top:18%;  animation: fadeDown 1s ease-in-out;
+
+
+}
+
+.home-content h1 {
+  font-size: 3.1rem;
+  margin-bottom: 15px;
+  color: #43d0f6;
+  text-align: left;
+  white-space: nowrap
+  ;
+}
+.typing-text {
+  overflow: hidden;             /* hide overflowing text */
+  white-space: nowrap;          /* keep text in one line */
+  border-right: 3px solid #43d0f6; /* cursor effect */
+  width: 0;                     /* start hidden */
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+.home-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+
+/* Typing animation */
+@keyframes typingRole {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor blinking */
+@keyframes blinkRole {
+  50% { border-color: transparent; }
+}
+
+
+.home-content p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  color: #cfd3dc;
+}
+
+.home-buttons {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+.btn:hover {
+  background: #fff;
+  color: #0e1525;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #43d0f6;
+  color: #43d0f6;
+}
+
+
+.btn-outline:hover {
+  background: #43d0f6;
+  color: #000;
+}
+
+/* Right Side Image */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+   transition: transform 0.3s ease-in-out;
+   animation: fadeDown 1s ease-in-out;
+  box-shadow: 0 8px 20px rgba(67, 20, 26, 0.4);
+  position: absolute;
+  left:55%;
+  top: 22%;
+
+  
+}
+.home-image:hover{
+    transform: scale(1.05);
+
+}
+
+.home-image img {
+  
+  width: 400px;
+  border-radius: 10%;
+  box-shadow: 0 8px 20px rgba(67, 208, 246, 0.5);
+  max-width: 110%;
+  height: auto;
+  margin-left: 30%;   
+
+}
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Responsive */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column; /* stack items */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4000px 20px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-color: #0e1525;
+    width: 10000%;
+    height: 50%;
+  }
+  .home-content {
+    position: absolute;
+    top: 300%;
+    left: -9%;
+    width:45%;
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative; /* ❌ removed absolute */
+    top: auto;
+    left: 8%;
+  }
+
+  .home-content h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+    margin: 15px auto;
+    width: 90%;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+
+  .home-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .home-image {
+       position: absolute;
+       top:140%;left: 10%;
+
+   
+  
+  }
+
+  .home-image img {
+    height: 150px;
+    width: 200px;
+    border-radius: 25%; /* circular profile */
+  }
+}
