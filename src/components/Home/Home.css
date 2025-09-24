@@ -186,7 +186,7 @@
   }
   .home-content {
     position: absolute;
-    top: 260%;
+    top: 300%;
     left: -9%;
     width:45%;
     order: 1;
@@ -226,7 +226,7 @@
 
   .home-image {
        position: absolute;
-       top: 100%;left: 10%;
+       top:140%;left: 10%;
 
    
   
