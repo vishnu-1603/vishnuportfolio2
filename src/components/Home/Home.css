@@ -187,8 +187,8 @@
   .home-content {
     position: absolute;
     top: 280%;
-    left: -7%;
-    width: 40%;
+    left: -10%;
+    width:45%;
     order: 1;
     margin-bottom: 20px;
   }
@@ -198,7 +198,7 @@
     margin-bottom: 10px;
     position: relative; /* ❌ removed absolute */
     top: auto;
-    left: 11%;
+    left: 17%;
   }
 
   .home-content h2 {
@@ -233,9 +233,6 @@
   }
 
   .home-image img {
-        width: 100px;
-    height: 50px;
-    
     border-radius: 25%; /* circular profile */
   }
 }
