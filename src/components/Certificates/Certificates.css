@@ -130,7 +130,7 @@
 @media (max-width: 786px) {
   .certificates{
     position: absolute;
-    left: -7.1%;
+    left: -6%;
     width: -190%;
     height: 66vh;
     overflow-x: hidden;

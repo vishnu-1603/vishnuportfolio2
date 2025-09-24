@@ -124,104 +124,68 @@
 }
 
 /* PERFECTLY CENTERED Mobile View */
-@media (max-width: 786px) {
-  .about {
-    background-color: #0e1525;
-    color: #004cff;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left:0%;
-        overflow-y: scroll;
+/* Base styles apply to all phones by default (mobile first) */
 
-  }
-
+/* Styles for phones and small devices up to 785px wide */
+@media (max-width: 785px) {
+  /* Example: Stack content vertically */
   .about-container {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    gap: 20px;
-    width: 90%;
-    max-width: 350px;
-    position: static;
-    margin: 0;
-    padding: 20px;
+    width: 95vw;
+    height: 200vh;
+    max-width: 400px;
+    gap: 10px;
+    padding: 1.5em;
   }
 
-  /* Remove image for mobile to focus on content centering */
-
-.about-image img {
-   position: absolute;
-    top: 12%;
-    right: 30%;
-    width: 40%;         /* Scale relative to screen */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(67, 208, 246, 0.4);
-  }
-  /* Content - Absolute center alignment */
-  .about-content {
-    width: 90%;
+  .about-image img {
     position: absolute;
-    top: 34%;
+    left: 16.5%; 
+    top: 100%;/* remove absolute positioning */
+    width: 30vw;
+    max-width: 200px;
+    border-radius: 900px;
+    box-shadow: 0 8px 20px rgba(67, 208, 246, 0.4);
+    margin-bottom: 0rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .about-content {
+    position: absolute;
+    top: 200%;
     left: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    max-width: 350px;
     text-align: center;
-    margin: 0;
     padding: 0;
   }
 
   .about-content h2 {
+    font-size: 1.8rem;
     color: #43d0f6;
-    margin: 0 0 20px 0;
+    margin-bottom: 1rem;
     white-space: normal;
-    font-weight: 1.5rem;
-    text-align: center;
-    width: 80%;
   }
 
   .about-content p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0 0 25px 0;
-    text-align: center;
-    position: static;
-    width: 100%;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
     color: #cfd3dc;
-    padding: -20px;
   }
 
-  /* Buttons - Perfect center alignment */
   .about-buttons {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
     gap: 15px;
     width: 100%;
-    position: static;
-    margin: -20px;
-    padding: 0;
   }
 
-  .about-buttons .btn {
-    padding: 12px 24px;
-    font-size: 0.85rem;
+  .btn, .btn-outline {
+    padding: 12px 25px;
+    font-size: 0.95rem;
     border-radius: 25px;
-    text-align: center;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-    margin: 0;
   }
-
 }
