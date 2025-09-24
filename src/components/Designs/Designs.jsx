@@ -27,10 +27,7 @@ function Designs() {
       <p className="designs-subtitle">Here are some creative works I’ve done</p>
 
       {/* Buttons */}
-      <div className="scroll-buttons">
-        <button onClick={scrollLeft} className="scroll-btn">⬅ Prev</button>
-        <button onClick={scrollRight} className="scroll-btn">Next ➡</button>
-      </div>
+     
 
       {/* Outer Scroll Container */}
       <div className="designs-outer" ref={containerRef}>
