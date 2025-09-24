@@ -1,35 +1,25 @@
-import React from 'react'
-import Navbar from './components/Navbar/Navbar'
-import { Route, Routes } from 'react-router-dom'
-import Home from './components/Home/Home';
-import About from './components/About/About';
+import React from 'react';
+import './App.css';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
 import Skills from './components/Skills/Skills';
-import Certificates from './components/Certificates/Certificates';
 import Projects from './components/Projects/Projects';
-import Designs from './components/Designs/Designs';
+import Certificates from './components/Certificates/Certificates';
 import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
 
-const App = () => {
-  
+function App() {
   return (
-    <>
-    <div>
-      <Navbar/>
-      <Routes>
-         <Route path='/' element={<Home/>}/>
-         <Route path='/About' element={<About/>}/>
-         <Route path='/skills' element={<Skills/>}/>
-         <Route path='/projects' element={<Projects/>}/>
-         <Route path='/certificates' element={<Certificates/>}/>
-         <Route path='/designs' element={<Designs/>}/>
-         <Route path='/contact' element={<Contact/>}/>
-  
-      </Routes>
-      <Footer/>
+    <div className="App">
+      <Header />
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Certificates />
+        <Contact />
+      </main>
     </div>
-    </>
-  )
+  );
 }
 
 export default App;
