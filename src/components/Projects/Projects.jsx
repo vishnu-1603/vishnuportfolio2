@@ -30,7 +30,7 @@ const Projects = () => {
 
           {/* Project 2 */}
           <div className="project-card">
-            <img src={project2} alt="Project 2" className="project2"/>
+            <img src={project2} alt="Project 2" className="project1"/>
             <div className="project-info">
               <h3>Modern Library UI Website </h3>
               <p>Modern Library user interface designed with Figma and React.</p>
@@ -42,7 +42,7 @@ const Projects = () => {
 
           {/* Project 3 */}
           <div className="project-card">
-            <img src={project3} alt="Project 3" className="project3" />
+            <img src={project3} alt="Project 3" className="project1" />
             <div className="project-info">
               <h3>Typing Speed Test Web Page</h3>
               <p>Test your typing speed and accuracy with this simple web app!</p>
