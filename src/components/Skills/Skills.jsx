@@ -16,7 +16,7 @@ const rightSkills = [
     { name: "Canva", level: 80 },
       { name: "Lightroom", level: 85 },
       { name: "Excel", level: 60 },
-        { name: "Adobe Express", level: 85 },
+        { name: "Miro", level: 85 },
 
 
 
